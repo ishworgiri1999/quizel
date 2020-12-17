@@ -19,7 +19,9 @@ class ViewResult extends StatelessWidget {
         Flexible(
           flex: 1,
           child: RaisedButton(
-            child: Text("Go Back"),
+            child: Text(
+              "Go Back",
+            ),
             onPressed: () => Navigator.pop(context),
           ),
         )

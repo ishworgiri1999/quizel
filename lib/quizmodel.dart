@@ -3,21 +3,27 @@ import 'package:flutter/foundation.dart';
 class QuizModel extends ChangeNotifier {
   var questions = [
     {
-      "question": "whay is aaa",
-      "qoptions": ["this", "that", "or", "idk"],
-      "answer": "this",
+      "question": "Who is the youngest person to recieve a Nobel Prize?",
+      "qoptions": [
+        "Lawrence Bragg",
+        "Werner Heisenberg",
+        "Yasser Arafat",
+        "Malala Yousafzai"
+      ],
+      "answer": "Malala Yousafzai",
     },
     {
-      "question": "da is nowa",
-      "qoptions": ["daa", "aaa", "oddr", "awe"],
-      "answer": "awe",
+      "question":
+          "Which of the following carbonated soft drinks were introduced first?",
+      "qoptions": ["Dr. Pepper", "Coca-Cola", "Sprite", "Mountain Dew"],
+      "answer": "Dr. Pepper",
     },
   ];
 
   var qindex = 0;
   var score = 0;
   void check(ans) {
-    if (ans == questions[qindex]["answer"]) {
+    if (ans) {
       score = score + 1;
     }
 

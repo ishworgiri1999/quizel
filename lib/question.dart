@@ -11,7 +11,7 @@ class Question extends StatelessWidget {
       child: Text(
         question,
         textAlign: TextAlign.center,
-        overflow: TextOverflow.ellipsis,
+        //overflow: TextOverflow.ellipsis,
         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
       ),
     );
