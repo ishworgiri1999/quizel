@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizel/homepage.dart';
 import 'package:quizel/playquiz.dart';
 import 'package:provider/provider.dart';
 import 'quizmodel.dart';
@@ -16,6 +17,6 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: PlayQuiz());
+        home: HomePage());
   }
 }

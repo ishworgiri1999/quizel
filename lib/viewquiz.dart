@@ -18,7 +18,7 @@ class ViewQuiz extends StatelessWidget {
           Flexible(
             flex: 1,
             child: LinearProgressIndicator(
-              value: 0.1 + 0.1 * qindex,
+              value: (qindex + 1) / (questions.length),
             ),
           ),
           Flexible(

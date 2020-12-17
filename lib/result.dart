@@ -7,9 +7,23 @@ class ViewResult extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Center(
-        child: Text("Score is :" + score.toString()),
-      ),
+      alignment: Alignment.topCenter,
+      child:
+          Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+        Flexible(
+          flex: 5,
+          child: Text(
+            "Score is :" + score.toString(),
+          ),
+        ),
+        Flexible(
+          flex: 1,
+          child: RaisedButton(
+            child: Text("Go Back"),
+            onPressed: () => Navigator.pop(context),
+          ),
+        )
+      ]),
     );
   }
 }
