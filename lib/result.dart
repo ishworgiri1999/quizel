@@ -7,7 +7,9 @@ class ViewResult extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("Score is :" + score.toString()),
+      child: Center(
+        child: Text("Score is :" + score.toString()),
+      ),
     );
   }
 }

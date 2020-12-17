@@ -1,48 +1,39 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:quizel/quizmodel.dart';
+import 'package:provider/provider.dart';
 
 class Answer extends StatefulWidget {
-  final options;
-  final correct;
-  final Function statechanger;
-  Answer(this.options, this.correct, this.statechanger);
-
   @override
   _AnswerState createState() => _AnswerState();
 }
 
+something(ans) {}
+
 class _AnswerState extends State<Answer> {
-  var options = ["1", "2"];
-  var data = "44";
-  var bcolor = Colors.blue;
-  void checkanswer(ans) {
-    setState(() {
-      if (ans == widget.correct) {
-        bcolor = Colors.green;
-      } else {
-        bcolor = Colors.red;
-      }
-    });
-
-    widget.statechanger(true);
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: (widget.options as List<String>)
-          .map((opt) => SizedBox(
-                width: 250,
-                child: RaisedButton(
-                  onPressed: () => checkanswer(opt),
-                  child: Text(
-                    opt,
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  color: bcolor,
-                  // duration: Duration(milliseconds: 300),
-                ),
-              ))
-          .toList(),
-    );
+    //var options = widget.options;
+
+    return Consumer<QuizModel>(builder: (context, QuizModel, child) {
+      return Column(
+        children:
+            (QuizModel.questions[QuizModel.qindex]["qoptions"] as List<String>)
+                .map((opt) => SizedBox(
+                      width: 250,
+                      child: RaisedButton(
+                        onPressed: () => QuizModel.check(opt),
+                        child: Text(
+                          opt,
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        color: Colors.red,
+                        // duration: Duration(milliseconds: 300),
+                      ),
+                    ))
+                .toList(),
+      );
+    });
   }
 }

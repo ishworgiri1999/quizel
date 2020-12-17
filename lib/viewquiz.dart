@@ -2,19 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:quizel/answer.dart';
 import 'package:quizel/question.dart';
 
-class ViewQuiz extends StatefulWidget {
+class ViewQuiz extends StatelessWidget {
   final questions;
   final qindex;
-  final Function statechanger;
-  ViewQuiz(this.questions, this.qindex, this.statechanger);
+  ViewQuiz(this.questions, this.qindex);
 
   @override
-  _ViewQuizState createState() => _ViewQuizState();
-}
-
-class _ViewQuizState extends State<ViewQuiz> {
-  @override
-  Widget build(BuildContext context) {
+  build(BuildContext context) {
     return Container(
       color: Colors.red,
       child: Column(
@@ -24,17 +18,16 @@ class _ViewQuizState extends State<ViewQuiz> {
           Flexible(
             flex: 1,
             child: LinearProgressIndicator(
-              value: 0.1 + 0.1 * widget.qindex,
+              value: 0.1 + 0.1 * qindex,
             ),
           ),
           Flexible(
             flex: 4,
-            child: Question(widget.questions[widget.qindex]["question"]),
+            child: Question(questions[qindex]["question"]),
           ),
           Flexible(
             flex: 4,
-            child: Answer(widget.questions[widget.qindex]["qoptions"],
-                widget.questions[widget.qindex]["answer"], widget.statechanger),
+            child: Answer(),
           ),
         ],
       ),
