@@ -11,7 +11,7 @@ class Answer extends StatelessWidget {
 
     //var ptions = widget.options;
     return Column(
-      children: (qzm.questions[qzm.qindex]["qoptions"] as List<String>)
+      children: (qzm.questions[qzm.qindex]["qoptions"] as List<dynamic>)
           .map((opt) => AnswerOption(qzm, opt))
           .toList(),
     );
